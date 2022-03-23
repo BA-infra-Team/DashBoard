@@ -172,37 +172,38 @@
     <Grid RenderTransformOrigin="0.511,0.527" Background="#FFDED4D4">
         <Rectangle HorizontalAlignment="Left" Height="500" VerticalAlignment="Center" Width="80" Fill="#FFA043E4"/>
         <Image HorizontalAlignment="Left" Height="60" Margin="8,8,0,0" VerticalAlignment="Top" Width="60" Source="/log.jpg"/>
-        <Button Style="{DynamicResource ButtonStyle1}" Content="" HorizontalAlignment="Left" Height="60" Margin="8,90,0,0" VerticalAlignment="Top" Width="60" Background="#FFF9F3F3" RenderTransformOrigin="-0.361,0.011" BorderBrush="{x:Null}"/>
-        <Button Style="{DynamicResource ButtonStyle2}" Content="" HorizontalAlignment="Left" Height="60" Margin="8,190,0,0" VerticalAlignment="Top" Width="60" Background="#FFE45757" RenderTransformOrigin="-0.361,0.011" BorderBrush="{x:Null}"/>
-        <Button Style="{DynamicResource ButtonStyle3}" Content="" HorizontalAlignment="Left" Height="60" Margin="8,290,0,0" VerticalAlignment="Top" Width="60" Background="#FFE45757" RenderTransformOrigin="-0.361,0.011" BorderBrush="{x:Null}"/>
+        <Button Style="{DynamicResource ButtonStyle1}" Content="" HorizontalAlignment="Left" Height="60" Margin="8,90,0,0" VerticalAlignment="Top" Width="60" Background="#FFF9F3F3" RenderTransformOrigin="-0.361,0.011" BorderBrush="{x:Null}" Click="Button_Click"/>
+        <Button Style="{DynamicResource ButtonStyle2}" Content="" HorizontalAlignment="Left" Height="60" Margin="8,190,0,0" VerticalAlignment="Top" Width="60" Background="#FFE45757" RenderTransformOrigin="-0.361,0.011" BorderBrush="{x:Null}" Click="Button_Click_1"/>
+        <Button Style="{DynamicResource ButtonStyle3}" Content="" HorizontalAlignment="Left" Height="60" Margin="8,290,0,0" VerticalAlignment="Top" Width="60" Background="#FFE45757" RenderTransformOrigin="-0.361,0.011" BorderBrush="{x:Null}" Click="Button_Click_2"/>
         <TextBlock HorizontalAlignment="Left" Height="58" Margin="108,16,0,0" TextWrapping="Wrap" Text="LOG DATA" VerticalAlignment="Top" Width="154" FontWeight="Bold" FontSize="20"/>
         <hc:Card HorizontalAlignment="Left" Height="200" Margin="98,50,0,0" VerticalAlignment="Top" Width="545"/>
         <TextBlock HorizontalAlignment="Left" Height="34.95" Margin="108,85,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"><Run Text="STATISTICS"/><LineBreak/></TextBlock>
-        <Grid Margin="120,120,705,240">
 
+        <!--STATISITC 첫번째 -->
+        <Grid Margin="120,120,705,240">
             <hc:CircleProgressBar HorizontalAlignment="Left" Height="75" VerticalAlignment="Top" Width="75" Value="25" Background="#FFEBF088" Foreground="#FFFFC500" FontSize="18" FontWeight="Bold" Text="25 %"/>
             <TextBlock HorizontalAlignment="Left" Height="19" Margin="0,92,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="75" TextAlignment="Center" FontWeight="Bold" Foreground="#FF756E6E"><Run Language="ko-kr" Text="Back-Up"/></TextBlock>
             <Rectangle Fill="#FFEBF088" HorizontalAlignment="Left" Height="15" Margin="0,113,0,0" RadiusY="10" RadiusX="10" VerticalAlignment="Top" Width="75"/>
             <TextBlock HorizontalAlignment="Left" Height="16" Margin="0,113,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="75" TextAlignment="Center" Foreground="#FFFFC500" Text="Ratio" FontSize="9" FontWeight="Bold"/>
-
         </Grid>
-        <Grid Margin="242,120,583,240">
 
+        <!--STATISITC 두번째 -->
+        <Grid Margin="242,120,583,240">
             <hc:CircleProgressBar HorizontalAlignment="Left" Height="75" VerticalAlignment="Top" Width="75" Value="50" Background="#FF8893F0" Foreground="#FF7D00FF" FontSize="18" FontWeight="Bold"/>
             <TextBlock HorizontalAlignment="Left" Height="19" Margin="0,92,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="75" TextAlignment="Center" FontWeight="Bold" Foreground="#FF756E6E"><Run Language="ko-kr" Text="Back-Up"/></TextBlock>
             <Rectangle Fill="#FFB688F0" HorizontalAlignment="Left" Height="15" Margin="0,113,0,0" RadiusY="10" RadiusX="10" VerticalAlignment="Top" Width="75"/>
             <TextBlock HorizontalAlignment="Left" Height="16" Margin="0,113,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="75" TextAlignment="Center" Foreground="#FFC300FF" Text="Total-Count" FontSize="9" FontWeight="Bold"/>
-
         </Grid>
-        <Grid Margin="359,120,466,240">
 
+        <!--STATISITC 세번째 -->
+        <Grid Margin="359,120,466,240">
             <hc:CircleProgressBar HorizontalAlignment="Left" Height="75" VerticalAlignment="Top" Width="75" Value="75" Background="#FF30E83C" Foreground="#FF0B9214" FontSize="18" FontWeight="Bold"/>
             <TextBlock HorizontalAlignment="Left" Height="19" Margin="0,92,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="75" TextAlignment="Center" FontWeight="Bold" Foreground="#FF756E6E"><Run Language="ko-kr" Text="Back-Up"/></TextBlock>
             <Rectangle Fill="#FF89E497" HorizontalAlignment="Left" Height="15" Margin="0,113,0,0" RadiusY="10" RadiusX="10" VerticalAlignment="Top" Width="75"/>
             <TextBlock HorizontalAlignment="Left" Height="16" Margin="0,113,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="75" TextAlignment="Center" Foreground="#FF268E11" Text="Size-Ratio" FontSize="9" FontWeight="Bold"/>
-
         </Grid>
-        <Path Data="M479.33333,70 L480,270" Fill="#FFCBCBD2" HorizontalAlignment="Left" Height="200" Margin="468,71,0,0" Stretch="Fill" VerticalAlignment="Top" Width="2" Stroke="#FFC7C3C3"/>
+
+        <Path Data="M479.33333,70 L480,270" Fill="#FFCBCBD2" HorizontalAlignment="Left" Height="200" Margin="464,53,0,0" Stretch="Fill" VerticalAlignment="Top" Width="2" Stroke="#FFC7C3C3"/>
         <TextBlock HorizontalAlignment="Left" Height="17" Margin="487,85,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"><Run Language="ko-kr" Text="Deadlines"/></TextBlock>
         <ProgressBar HorizontalAlignment="Left" Height="15" Margin="487,117,0,0" VerticalAlignment="Top" Width="70" Foreground="#FFC5C710" FontSize="10" Value="50"/>
         <hc:DatePicker Margin="576,107,293,362"/>
@@ -232,32 +233,33 @@
             <WrapPanel Orientation="Horizontal" Height="403" >
                 <Grid Width="222" Height="61">
                     <Rectangle Height="45" Width="45" Margin="10,6,167,10" RadiusX="22.5" RadiusY="22.5" Fill="#FFC28EE6"/>
-                    <TextBlock TextWrapping="Wrap" Text="E" Margin="10,19,167,24" FontWeight="Bold" FontSize="16" TextAlignment="Center"/>
+
+                    <Button x:Name="Total_Error_Ratio" Margin="10,19,167,24" FontWeight="Bold" FontSize="16" Content="E" Background="#FFC28EE6" BorderBrush="{x:Null}"/>
                     <TextBlock HorizontalAlignment="Left" Height="30" Margin="75,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" Foreground="#FF252424" FontSize="14" FontWeight="Bold" TextAlignment="Center"><Run Language="ko-kr" Text="Total Error Ratio"/></TextBlock>
                 </Grid>
                 <Grid Width="222" Height="61">
                     <Rectangle Height="45" Width="45" Margin="10,6,167,10" RadiusX="22.5" RadiusY="22.5" Fill="#FFC28EE6"/>
-                    <TextBlock TextWrapping="Wrap" Text="F" Margin="10,19,167,24" FontWeight="Bold" FontSize="16" TextAlignment="Center"/>
+                    <Button x:Name="Total_Files_Ratio" Content="F" Margin="10,19,167,24" FontWeight="Bold" FontSize="16" Background="#FFC28EE6" BorderBrush="{x:Null}" />
                     <TextBlock HorizontalAlignment="Left" Height="30" Margin="75,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" Foreground="#FF252424" FontSize="14" FontWeight="Bold" TextAlignment="Center"><Run Language="ko-kr" Text="Total Files Ratio"/></TextBlock>
                 </Grid>
                 <Grid Width="222" Height="61">
                     <Rectangle Height="45" Width="45" Margin="10,6,167,10" RadiusX="22.5" RadiusY="22.5" Fill="#FFC28EE6"/>
-                    <TextBlock TextWrapping="Wrap" Text="E" Margin="10,19,167,24" FontWeight="Bold" FontSize="16" TextAlignment="Center"/>
+                    <Button Content="F" Margin="10,19,167,24" FontWeight="Bold" FontSize="16"  Background="#FFC28EE6" BorderBrush="{x:Null}"/>
                     <TextBlock HorizontalAlignment="Left" Height="47" Margin="75,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="117" Foreground="#FF252424" FontSize="14" FontWeight="Bold" TextAlignment="Center"><Run Language="ko-kr" Text="Total Back-Up Ratio"/></TextBlock>
                 </Grid>
                 <Grid Width="222" Height="61">
                     <Rectangle Height="45" Width="45" Margin="10,6,167,10" RadiusX="22.5" RadiusY="22.5" Fill="#FFC28EE6"/>
-                    <TextBlock TextWrapping="Wrap" Text="E" Margin="10,19,167,24" FontWeight="Bold" FontSize="16" TextAlignment="Center"/>
+                    <Button Content="F" Margin="10,19,167,24" FontWeight="Bold" FontSize="16"  Background="#FFC28EE6" BorderBrush="{x:Null}"/>
                     <TextBlock HorizontalAlignment="Left" Height="30" Margin="75,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" Foreground="#FF252424" FontSize="14" FontWeight="Bold" TextAlignment="Center"><Run Language="ko-kr" Text="Total Error Ratio"/></TextBlock>
                 </Grid>
                 <Grid Width="222" Height="61">
                     <Rectangle Height="45" Width="45" Margin="10,6,167,10" RadiusX="22.5" RadiusY="22.5" Fill="#FFC28EE6"/>
-                    <TextBlock TextWrapping="Wrap" Text="F" Margin="10,19,167,24" FontWeight="Bold" FontSize="16" TextAlignment="Center"/>
+                    <Button Content="F" Margin="10,19,167,24" FontWeight="Bold" FontSize="16"  Background="#FFC28EE6" BorderBrush="{x:Null}"/>
                     <TextBlock HorizontalAlignment="Left" Height="30" Margin="75,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" Foreground="#FF252424" FontSize="14" FontWeight="Bold" TextAlignment="Center"><Run Language="ko-kr" Text="Total Files Ratio"/></TextBlock>
                 </Grid>
                 <Grid Width="222" Height="61">
                     <Rectangle Height="45" Width="45" Margin="10,6,167,10" RadiusX="22.5" RadiusY="22.5" Fill="#FFC28EE6"/>
-                    <TextBlock TextWrapping="Wrap" Text="E" Margin="10,19,167,24" FontWeight="Bold" FontSize="16" TextAlignment="Center"/>
+                    <Button Content="F" Margin="10,19,167,24" FontWeight="Bold" FontSize="16"  Background="#FFC28EE6" BorderBrush="{x:Null}"/>
                     <TextBlock HorizontalAlignment="Left" Height="47" Margin="75,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="117" Foreground="#FF252424" FontSize="14" FontWeight="Bold" TextAlignment="Center"><Run Language="ko-kr" Text="Total Back-Up Ratio"/></TextBlock>
                 </Grid>
             </WrapPanel>

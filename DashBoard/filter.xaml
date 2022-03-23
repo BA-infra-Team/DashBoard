@@ -1,18 +1,29 @@
-﻿<Window
+﻿<Window 
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DashBoard"
         xmlns:hc="https://handyorg.github.io/handycontrol" x:Class="DashBoard.filter"
+        xmlns:eo= "http://schemas.essentialobjects.com/wpf/" 
         mc:Ignorable="d"
-        Title="filter" Height="450" Width="800">
+        Title="filter" Height="500" Width="800" Background="#FFE0DCDC">
     <Grid>
+        <!-- filter combobox -->
+        <ListView x:Name="LogList" Margin="0, 50, 0, 0">
+            <ListView.View>
+                <GridView>
 
-        <hc:CheckComboBox HorizontalAlignment="Left" Height="41" Margin="53,56,0,0" VerticalAlignment="Top" Width="124" d:ItemsSource="{d:SampleData ItemCount=5}">
-            <CheckBox/>
-            <CheckBox/>
-        </hc:CheckComboBox>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <ComboBox Name="FilterBy" HorizontalAlignment="Left" VerticalAlignment="Top" Width="244" Margin="10,10,0,0"/>
+        <TextBox x:Name="FilterText" HorizontalAlignment="Center" VerticalAlignment="Top" Width="244" Margin="0,10,0,0"/>
+
+
 
     </Grid>
-</Window>
+
+
+</Window> 
