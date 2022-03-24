@@ -6,12 +6,10 @@
         xmlns:local="clr-namespace:DashBoard"
         xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
         mc:Ignorable="d"
-        Title="Piechart" Height="450" Width="800">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"></RowDefinition>
-            <RowDefinition Height="*"></RowDefinition>
-        </Grid.RowDefinitions>
+        Title="Piechart" Height="500" Width="1000">
+    <Grid Margin="10,10,0,0" Width="940">
+
+
         <!--
         <StackPanel Grid.Row="0" Orientation="Horizontal">
             <Button Click="UpdateAllOnClick" Padding="10 0">
@@ -35,8 +33,32 @@
 
         </StackPanel>
         -->
-        <lvc:PieChart Name="Chart" Grid.Row="1" Series="{Binding SeriesCollection}" 
-                      LegendLocation="Right" InnerRadius="100" Margin="0 15">
+
+        <TextBlock Text="Job Type" Margin="10,41,779,384" FontWeight="Bold" FontSize="16"/>
+        <lvc:PieChart Name="Chart"  Series="{Binding SeriesCollection}" 
+                      LegendLocation="Right" InnerRadius="50" Margin="10,90,484,63">
+
+            <lvc:PieChart.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FFB2F3A9" Offset="1"/>
+                </LinearGradientBrush>
+            </lvc:PieChart.Background>
+            <lvc:PieChart.ChartLegend>
+                <lvc:DefaultLegend BulletSize="10"></lvc:DefaultLegend>
+            </lvc:PieChart.ChartLegend>
+
+        </lvc:PieChart>
+
+        <TextBlock Text="Backup Method" Margin="484,39,315,384" FontWeight="Bold" FontSize="16"/>
+        <lvc:PieChart Series="{Binding SeriesCollection1}" 
+                      LegendLocation="Right" InnerRadius="50" Margin="484,90,10,63">
+            <lvc:PieChart.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF8BE284" Offset="1"/>
+                </LinearGradientBrush>
+            </lvc:PieChart.Background>
             <lvc:PieChart.ChartLegend>
                 <lvc:DefaultLegend BulletSize="20"></lvc:DefaultLegend>
             </lvc:PieChart.ChartLegend>

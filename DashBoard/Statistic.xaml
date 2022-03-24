@@ -8,15 +8,29 @@
         xmlns:Wpf="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
         
         mc:Ignorable="d"
-        Title="Statistic" Height="450" Width="800">
+        Title="Statistic" Height="500" Width="950">
     <Grid>
-        <lvc:CartesianChart Series="{Binding SeriesCollection}" LegendLocation="Right" >
+        <Grid >
+        <TextBlock Text="평균 전송 시간" Margin="40,30,792,434" FontWeight="Bold" Foreground="#FFD64545" FontSize="16"></TextBlock>
+        <lvc:CartesianChart Series="{Binding SeriesCollection}" LegendLocation="Top" Margin="10,128,492,96" >
             <lvc:CartesianChart.AxisY>
-                <lvc:Axis Title="Count" LabelFormatter="{Binding YFormatter}"></lvc:Axis>
+                <lvc:Axis Title="Second" LabelFormatter="{Binding YFormatter}"></lvc:Axis>
             </lvc:CartesianChart.AxisY>
             <lvc:CartesianChart.AxisX>
                 <lvc:Axis Title="Day" Labels="{Binding Labels}"></lvc:Axis>
             </lvc:CartesianChart.AxisX>
         </lvc:CartesianChart>
+        </Grid>
+        <Grid>
+        <lvc:CartesianChart Series="{Binding SeriesCollection1}" LegendLocation="Top" Margin="496,128,0,96">
+            <lvc:CartesianChart.AxisX>
+                <lvc:Axis Title="Date" Labels="{Binding Labels}"></lvc:Axis>
+            </lvc:CartesianChart.AxisX>
+            <lvc:CartesianChart.AxisY>
+                <lvc:Axis Title="Count" LabelFormatter="{Binding Formatter}"></lvc:Axis>
+            </lvc:CartesianChart.AxisY>
+        </lvc:CartesianChart>
+        </Grid>
+       
     </Grid>
 </Window>

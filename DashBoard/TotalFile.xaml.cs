@@ -1,4 +1,5 @@
 ﻿using LiveCharts;
+using LiveCharts.Defaults;
 using LiveCharts.Wpf;
 using System;
 using System.Collections.Generic;
@@ -28,39 +29,65 @@ namespace DashBoard
 
             SeriesCollection = new SeriesCollection
             {
-                new StackedColumnSeries
+                new PieSeries
                 {
-                    Values = new ChartValues<double> {ChartData.File_Statistics_PieChart_Total_Size, 5, 6, 8},
-                    StackMode = StackMode.Values, // this is not necessary, values is the default stack mode
+                    Title = "Completed",
+                    Values = new ChartValues<ObservableValue> { new ObservableValue(ChartData.Total_Error_Ratio_PieChart_Total_Completed_Count) },
+                    DataLabels = true
+
+                },
+                new PieSeries
+                {
+                    Title = "Canceled",
+                    Values = new ChartValues<ObservableValue> { new ObservableValue(ChartData.Error_Ratio_By_Job_Status_PieChart_Canceled_Error_Count) },
                     DataLabels = true
                 },
-                new StackedColumnSeries
+                new PieSeries
                 {
-                    Values = new ChartValues<double> {2, 5, 6, 7},
-                    StackMode = StackMode.Values,
+                    Title = "Failed",
+                    Values = new ChartValues<ObservableValue> { new ObservableValue(ChartData.Error_Ratio_By_Job_Status_PieChart_Failed_Error_Count) },
+                    DataLabels = true
+                },
+                new PieSeries
+                {
+                    Title = "partially Completed",
+                    Values = new ChartValues<ObservableValue> { new ObservableValue(ChartData.Error_Ratio_By_Job_Status_PieChart_Partially_Completed_Count) },
+                    DataLabels = true
+                },
+
+                new PieSeries
+                {
+                    Title = "Suspend",
+                    Values = new ChartValues<ObservableValue> { new ObservableValue(ChartData.Error_Ratio_By_Job_Status_PieChart_Suspended_Error_Count) },
                     DataLabels = true
                 }
             };
 
-            //adding series updates and animates the chart
-            SeriesCollection.Add(new StackedColumnSeries
+            SeriesCollection1 = new SeriesCollection
             {
-                Values = new ChartValues<double> { 6, 2, 7 },
-                StackMode = StackMode.Values
-            });
+                new PieSeries
+                {
+                    Title = "Completed",
+                    Values = new ChartValues<ObservableValue> { new ObservableValue(ChartData.Total_Error_Ratio_PieChart_Total_Completed_Count) },
+                    DataLabels = true
 
-            //adding values also updates and animates
-            SeriesCollection[2].Values.Add(4d);
-
-            Labels = new[] { "Chrome", "Mozilla", "Opera", "IE" };
-            Formatter = value => value + " Mill";
-
+                },
+                new PieSeries
+                {
+                    Title = "Canceled",
+                    Values = new ChartValues<ObservableValue> { new ObservableValue(ChartData.Error_Ratio_By_Job_Status_PieChart_Canceled_Error_Count) },
+                    DataLabels = true
+                },
+               
+            };
             DataContext = this;
         }
 
         public SeriesCollection SeriesCollection { get; set; }
+        public SeriesCollection SeriesCollection1 { get; set; }
         public string[] Labels { get; set; }
         public Func<double, string> Formatter { get; set; }
+
     }
     
 }

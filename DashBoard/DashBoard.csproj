@@ -180,5 +180,25 @@
   <ItemGroup>
     <Resource Include="error report.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Error.png" />
+    <Resource Include="Filtering.png" />
+    <Resource Include="home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Statistic2 %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Statistic2 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Statistic2 %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Statistic2 %284%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="error-icon-4.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

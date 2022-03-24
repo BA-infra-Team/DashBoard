@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using LiveCharts;
+using LiveCharts.Defaults;
 using LiveCharts.Wpf;
 using static DashBoard.MainWindow;
 
@@ -31,18 +32,7 @@ namespace DashBoard
 
             SeriesCollection = new SeriesCollection
             {
-                new LineSeries
-                {
-                    Title = "Total Backup",
-                    Values = new ChartValues<double> { ChartData.Total_Backup_Count_LineChart_2022_02_08_Completed_Count,
-                                                        ChartData.Total_Backup_Count_LineChart_2022_02_09_Completed_Count,
-                                                        ChartData.Total_Backup_Count_LineChart_2022_02_10_Completed_Count,
-                                                        ChartData.Total_Backup_Count_LineChart_2022_02_11_Completed_Count,
-                                                        ChartData.Total_Backup_Count_LineChart_2022_02_12_Completed_Count,
-                                                        ChartData.Total_Backup_Count_LineChart_2022_02_13_Completed_Count,
-                                                        ChartData.Total_Backup_Count_LineChart_2022_02_14_Completed_Count,
-                                                        ChartData.Total_Backup_Count_LineChart_2022_02_15_Completed_Count}
-                },
+               
                 new LineSeries
                 {
                     Title = "Avg Elapsed Time",
@@ -56,18 +46,45 @@ namespace DashBoard
                                                         ChartData.Avg_Elapsed_Time_LineChart_2022_02_15_Avg_Elapsed_Times}
                     
                 },
-                /*new LineSeries
-                {
-                    Title = "Series 3",
-                    Values = new ChartValues<double> { 4,2,7,2,7 },
-                    PointGeometry = DefaultGeometries.Square,
-                    PointGeometrySize = 15
-                }*/
+                
             };
 
+            SeriesCollection1 = new SeriesCollection
+            {
+                new ColumnSeries
+                {
+                    Title = "일일 파일 처리건",
+                    Values = new ChartValues<double> { ChartData.Total_Backup_Count_LineChart_2022_02_08_Completed_Count,
+                                                        ChartData.Total_Backup_Count_LineChart_2022_02_09_Completed_Count,
+                                                        ChartData.Total_Backup_Count_LineChart_2022_02_10_Completed_Count,
+                                                        ChartData.Total_Backup_Count_LineChart_2022_02_11_Completed_Count,
+                                                        ChartData.Total_Backup_Count_LineChart_2022_02_12_Completed_Count,
+                                                        ChartData.Total_Backup_Count_LineChart_2022_02_13_Completed_Count,
+                                                        ChartData.Total_Backup_Count_LineChart_2022_02_14_Completed_Count,
+                                                        ChartData.Total_Backup_Count_LineChart_2022_02_15_Completed_Count}
+                }
+            };
+
+            //adding series will update and animate the chart automatically
+            SeriesCollection1.Add(new ColumnSeries
+            {
+                Title = "일일 파일 처리 수",
+                Values = new ChartValues<double> { ChartData.Total_File_Size_LineChart_2022_02_08_Count,
+                                                        ChartData.Total_File_Size_LineChart_2022_02_09_Count,
+                                                        ChartData.Total_File_Size_LineChart_2022_02_10_Count,
+                                                        ChartData.Total_File_Size_LineChart_2022_02_11_Count,
+                                                        ChartData.Total_File_Size_LineChart_2022_02_12_Count,
+                                                        ChartData.Total_File_Size_LineChart_2022_02_13_Count,
+                                                        ChartData.Total_File_Size_LineChart_2022_02_14_Count,
+                                                        ChartData.Total_File_Size_LineChart_2022_02_15_Count}
+            });
+
+
+            SeriesCollection1[1].Values.Add(48d);
             Labels = new[] { "22.02.08", "22.02.09", "22.02.10", "22.02.11", "22.02.12", "22.02.13", "22.02.14", "22.02.15" };
             YFormatter = value => value.ToString("N");
 
+           
             //modifying the series collection will animate and update the chart
             /*SeriesCollection.Add(new LineSeries
             {
@@ -86,6 +103,7 @@ namespace DashBoard
         }
 
         public SeriesCollection SeriesCollection { get; set; }
+        public SeriesCollection SeriesCollection1 { get; set; }
         public string[] Labels { get; set; }
         public Func<double, string> YFormatter { get; set; }
 

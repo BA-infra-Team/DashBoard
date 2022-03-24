@@ -8,15 +8,40 @@
         mc:Ignorable="d"
         Title="TotalFile" Height="450" Width="800">
     <Grid>
-        <lvc:CartesianChart Series="{Binding SeriesCollection}" LegendLocation="Bottom">
-            <lvc:CartesianChart.AxisX>
-                <lvc:Axis Title="Browser" 
-                          Labels="{Binding Labels}" 
-                          Separator="{x:Static lvc:DefaultAxes.CleanSeparator}" />
-            </lvc:CartesianChart.AxisX>
-            <lvc:CartesianChart.AxisY>
-                <lvc:Axis Title="Usage" LabelFormatter="{Binding Formatter}"></lvc:Axis>
-            </lvc:CartesianChart.AxisY>
-        </lvc:CartesianChart>
+        <TextBlock Text="Job Status" Margin="10,32,648,355" FontWeight="Bold" FontSize="16" Foreground="#FF2148BF"/>
+        <lvc:PieChart Name="Chart" Series="{Binding SeriesCollection}" 
+                      LegendLocation="Right" InnerRadius="50" Margin="10,79,443,70">
+            <lvc:PieChart.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF4B2BEA" Offset="0"/>
+                    <GradientStop Color="#FF8086EA" Offset="1"/>
+                </LinearGradientBrush>
+            </lvc:PieChart.Background>
+            <lvc:PieChart.ChartLegend>
+                <lvc:DefaultLegend BulletSize="20"></lvc:DefaultLegend>
+            </lvc:PieChart.ChartLegend>
+            <lvc:PieChart.DataTooltip>
+                <lvc:DefaultTooltip BulletSize="20"></lvc:DefaultTooltip>
+            </lvc:PieChart.DataTooltip>
+        </lvc:PieChart>
+        <TextBlock Text="Error Ratio" Margin="400,32,258,355" FontWeight="Bold" FontSize="16" Foreground="#FF2148BF"/>
+        <lvc:PieChart x:Name="Chart_Copy" Series="{Binding SeriesCollection1}" 
+            LegendLocation="Right" InnerRadius="50" Margin="400,79,53,70">
+            <lvc:PieChart.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF4B2BEA" Offset="0"/>
+                    <GradientStop Color="#FF8086EA" Offset="1"/>
+                </LinearGradientBrush>
+            </lvc:PieChart.Background>
+            <lvc:PieChart.ChartLegend>
+                <lvc:DefaultLegend BulletSize="20"/>
+            </lvc:PieChart.ChartLegend>
+            <lvc:PieChart.DataTooltip>
+                <lvc:DefaultTooltip BulletSize="20"/>
+            </lvc:PieChart.DataTooltip>
+        </lvc:PieChart>
+
+
+
     </Grid>
 </Window>

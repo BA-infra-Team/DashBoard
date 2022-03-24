@@ -28,51 +28,119 @@ namespace DashBoard
         {
            
             InitializeComponent();
-            
+
             SeriesCollection = new SeriesCollection
             {
                 new PieSeries
                 {
-                    Title = "Completed",
-                    Values = new ChartValues<ObservableValue> { new ObservableValue(ChartData.Total_Error_Ratio_PieChart_Total_Completed_Count) },
-                    DataLabels = true
-                    
+                    Title = "File Backup",
+                    Values = new ChartValues<ObservableValue> { new ObservableValue(ChartData.JobType_PieChart_File_Backup_Count) },
+                    DataLabels = true,
+                    Fill=System.Windows.Media.Brushes.Red
+
                 },
                 new PieSeries
                 {
-                    Title = "Canceled",
-                    Values = new ChartValues<ObservableValue> { new ObservableValue(ChartData.Error_Ratio_By_Job_Status_PieChart_Canceled_Error_Count) },
+                    Title = "Informix Onbar Backup",
+                    Values = new ChartValues<ObservableValue> { new ObservableValue(ChartData.JobType_PieChart_Informix_Onbar_Backup_Count) },
+                    DataLabels = true,
+                    Fill=System.Windows.Media.Brushes.Orange
+                },
+                new PieSeries
+                {
+                    Title = "Mysql Backup",
+                    Values = new ChartValues<ObservableValue> { new ObservableValue(ChartData.JobType_PieChart_Mysql_Backup_Count) },
+                    DataLabels = true,
+                    Fill=System.Windows.Media.Brushes.Yellow
+                },
+                new PieSeries
+                {
+                    Title = "Oracle RMAN Backup",
+                    Values = new ChartValues<ObservableValue> { new ObservableValue(ChartData.JobType_PieChart_Oracle_RMAN_Backup_Count) },
+                    DataLabels = true,
+                    Fill=System.Windows.Media.Brushes.Green
+                },
+
+                new PieSeries
+                {
+                    Title = "Physical Backup",
+                    Values = new ChartValues<ObservableValue> { new ObservableValue(ChartData.JobType_PieChart_Physical_Backup_Count) },
+                    DataLabels = true,
+                    Fill=System.Windows.Media.Brushes.Blue
+                },
+
+                new PieSeries
+                {
+                    Title = "VmWare Backup",
+                    Values = new ChartValues<ObservableValue> { new ObservableValue(ChartData.JobType_PieChart_Vm_Ware_Backup_Count) },
+                    DataLabels = true,
+                    Fill=System.Windows.Media.Brushes.Purple
+                }
+            };
+
+            
+
+            SeriesCollection1 = new SeriesCollection
+            {
+                new PieSeries
+                {
+                    Title = "Archive Backup",
+                    Values = new ChartValues<ObservableValue> { new ObservableValue(ChartData.Backup_Method_Ratio_Pie_Chart_Archive_Backup_Count) },
+                    DataLabels = true
+
+                },
+                new PieSeries
+                {
+                    Title = "Differential Backup",
+                    Values = new ChartValues<ObservableValue> { new ObservableValue(ChartData.Backup_Method_Ratio_Pie_Chart_Differential_Backup_Count) },
                     DataLabels = true
                 },
                 new PieSeries
                 {
-                    Title = "Failed",
-                    Values = new ChartValues<ObservableValue> { new ObservableValue(ChartData.Error_Ratio_By_Job_Status_PieChart_Failed_Error_Count) },
+                    Title = "Dump Backup",
+                    Values = new ChartValues<ObservableValue> { new ObservableValue(ChartData.Backup_Method_Ratio_Pie_Chart_Dump_Backup_Count) },
                     DataLabels = true
                 },
                 new PieSeries
                 {
-                    Title = "partially Completed",
-                    Values = new ChartValues<ObservableValue> { new ObservableValue(ChartData.Error_Ratio_By_Job_Status_PieChart_Partially_Completed_Count) },
+                    Title = "Full Backup",
+                    Values = new ChartValues<ObservableValue> { new ObservableValue(ChartData.Backup_Method_Ratio_Pie_Chart_Full_Backup_Count) },
                     DataLabels = true
                 },
 
                 new PieSeries
                 {
-                    Title = "Suspend",
-                    Values = new ChartValues<ObservableValue> { new ObservableValue(ChartData.Error_Ratio_By_Job_Status_PieChart_Suspended_Error_Count) },
+                    Title = "Increamental Backup",
+                    Values = new ChartValues<ObservableValue> { new ObservableValue(ChartData.Backup_Method_Ratio_Pie_Chart_Incremental_Backup_Count) },
+                    DataLabels = true
+                },
+
+                new PieSeries
+                {
+                    Title = "Synthetic Backup",
+                    Values = new ChartValues<ObservableValue> { new ObservableValue(ChartData.Backup_Method_Ratio_Pie_Chart_Synthetic_Count) },
                     DataLabels = true
                 }
             };
 
+            
+
             //adding values or series will update and animate the chart automatically
             //SeriesCollection.Add(new PieSeries());
             //SeriesCollection[0].Values.Add(5);
-
+          
             DataContext = this;
+            
+
+            
         }
 
         public SeriesCollection SeriesCollection { get; set; }
+        public SeriesCollection SeriesCollection1 { get; set; }
+        public string[] Labels { get; set; }
+        public Func<double, string> Formatter { get; set; }
+
+
 
         /*private void UpdateAllOnClick(object sender, RoutedEventArgs e)
         {
