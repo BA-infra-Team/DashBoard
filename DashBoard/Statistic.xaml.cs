@@ -36,7 +36,7 @@ namespace DashBoard
                 new LineSeries
                 {
                     Title = "Avg Elapsed Time",
-                    Values = new ChartValues<double> { ChartData.Avg_Elapsed_Time_LineChart_2022_02_08_Avg_Elapsed_Times,
+                    Values = new ChartValues<int> { ChartData.Avg_Elapsed_Time_LineChart_2022_02_08_Avg_Elapsed_Times,
                                                         ChartData.Avg_Elapsed_Time_LineChart_2022_02_09_Avg_Elapsed_Times,
                                                         ChartData.Avg_Elapsed_Time_LineChart_2022_02_10_Avg_Elapsed_Times,
                                                         ChartData.Avg_Elapsed_Time_LineChart_2022_02_11_Avg_Elapsed_Times,
@@ -54,7 +54,7 @@ namespace DashBoard
                 new ColumnSeries
                 {
                     Title = "일일 파일 처리건",
-                    Values = new ChartValues<double> { ChartData.Total_Backup_Count_LineChart_2022_02_08_Completed_Count,
+                    Values = new ChartValues<int> { ChartData.Total_Backup_Count_LineChart_2022_02_08_Completed_Count,
                                                         ChartData.Total_Backup_Count_LineChart_2022_02_09_Completed_Count,
                                                         ChartData.Total_Backup_Count_LineChart_2022_02_10_Completed_Count,
                                                         ChartData.Total_Backup_Count_LineChart_2022_02_11_Completed_Count,
@@ -69,7 +69,7 @@ namespace DashBoard
             SeriesCollection1.Add(new ColumnSeries
             {
                 Title = "일일 파일 처리 수",
-                Values = new ChartValues<double> { ChartData.Total_File_Size_LineChart_2022_02_08_Count,
+                Values = new ChartValues<int> { ChartData.Total_File_Size_LineChart_2022_02_08_Count,
                                                         ChartData.Total_File_Size_LineChart_2022_02_09_Count,
                                                         ChartData.Total_File_Size_LineChart_2022_02_10_Count,
                                                         ChartData.Total_File_Size_LineChart_2022_02_11_Count,
@@ -80,7 +80,7 @@ namespace DashBoard
             });
 
 
-            SeriesCollection1[1].Values.Add(48d);
+            //SeriesCollection1[1].Values.Add(4d);
             Labels = new[] { "22.02.08", "22.02.09", "22.02.10", "22.02.11", "22.02.12", "22.02.13", "22.02.14", "22.02.15" };
             YFormatter = value => value.ToString("N");
 

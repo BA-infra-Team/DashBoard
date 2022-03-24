@@ -1,4 +1,5 @@
 ﻿using HandyControl.Tools;
+using LiveCharts;
 using LiveCharts.Wpf;
 using System;
 using System.Collections.Generic;
@@ -25,6 +26,7 @@ namespace DashBoard
     /// </summary>
     public partial class MainWindow : Window
     {
+
         public class ChartData
         {
             // 홈 UI, 백업-메소드 비율을 보여주기 위한 데이터 구조체 선언 
@@ -228,6 +230,7 @@ namespace DashBoard
         {
             InitializeComponent();
 
+
             //파일 읽기
             string filepath = "C:\\Users\\BIT\\Desktop\\DownloadFromServer\\";
             IPAddress ipAddress = IPAddress.Parse("192.168.0.12");
@@ -270,14 +273,67 @@ namespace DashBoard
 
             ChartData ChartDatas = new ChartData();
             ChartDatas.Read_Chart_Data(bRead);
-            bRead.Close();                      
-                        
+            bRead.Close();
 
+            SeriesCollection = new SeriesCollection
+            {
+
+                new LineSeries
+                {
+                    Title = "File Size",
+                    Values = new ChartValues<int> { ChartData.Total_File_Size_LineChart_2022_02_08_Count,
+                                                        ChartData.Total_File_Size_LineChart_2022_02_09_Count,
+                                                        ChartData.Total_File_Size_LineChart_2022_02_10_Count,
+                                                        ChartData.Total_File_Size_LineChart_2022_02_11_Count,
+                                                        ChartData.Total_File_Size_LineChart_2022_02_12_Count,
+                                                        ChartData.Total_File_Size_LineChart_2022_02_13_Count,
+                                                        ChartData.Total_File_Size_LineChart_2022_02_14_Count,
+                                                        ChartData.Total_File_Size_LineChart_2022_02_15_Count}
+
+                },
+
+                 new LineSeries
+                {
+                    Title = "Write Size",
+                    Values = new ChartValues<int> { ChartData.Total_Write_Size_LineChart_2022_02_08_Count,
+                                                        ChartData.Total_Write_Size_LineChart_2022_02_09_Count,
+                                                        ChartData.Total_Write_Size_LineChart_2022_02_10_Count,
+                                                        ChartData.Total_Write_Size_LineChart_2022_02_11_Count,
+                                                        ChartData.Total_Write_Size_LineChart_2022_02_12_Count,
+                                                        ChartData.Total_Write_Size_LineChart_2022_02_13_Count,
+                                                        ChartData.Total_Write_Size_LineChart_2022_02_14_Count,
+                                                        ChartData.Total_Write_Size_LineChart_2022_02_15_Count}
+
+                },
+
+                  new LineSeries
+                {
+                    Title = "Transferred Data",
+                    Values = new ChartValues<int> { ChartData.Total_Data_Transferred_LineChart_2022_02_08_Count,
+                                                        ChartData.Total_Data_Transferred_LineChart_2022_02_09_Count,
+                                                        ChartData.Total_Data_Transferred_LineChart_2022_02_10_Count,
+                                                        ChartData.Total_Data_Transferred_LineChart_2022_02_11_Count,
+                                                        ChartData.Total_Data_Transferred_LineChart_2022_02_12_Count,
+                                                        ChartData.Total_Data_Transferred_LineChart_2022_02_13_Count,
+                                                        ChartData.Total_Data_Transferred_LineChart_2022_02_14_Count,
+                                                        ChartData.Total_Data_Transferred_LineChart_2022_02_15_Count}
+
+                },
+
+
+            };
+            //SeriesCollection[1].Values.Add(48d);
+            Labels = new[] { "22.02.08", "22.02.09", "22.02.10", "22.02.11", "22.02.12", "22.02.13", "22.02.14", "22.02.15" };
+            YFormatter = value => value.ToString("N");
+
+            DataContext = this;
             ConfigHelper.Instance.SetLang("en");
             }
 
-
-            private void Window_MouseDown(object sender, MouseButtonEventArgs e)
+        public SeriesCollection SeriesCollection { get; set; }
+        public string[] Labels { get; set; }
+        public Func<double, string> YFormatter { get; set; }
+        private void Window_MouseDown(object sender, MouseButtonEventArgs e)
             {
                 if (e.ChangedButton == MouseButton.Left)
                     this.DragMove();
@@ -313,6 +369,11 @@ namespace DashBoard
             TotalError totalerror = new TotalError();
 
             totalerror.Show();
+        }
+
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
         }
     }
 }

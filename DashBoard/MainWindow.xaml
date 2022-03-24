@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:DashBoard"
         mc:Ignorable="d"
         Title="MainWindow" Height="500" Width="900"
-        xmlns:hc="https://handyorg.github.io/handycontrol" MouseDown="Window_MouseDown" Background="{x:Null}">
+        xmlns:hc="https://handyorg.github.io/handycontrol" xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf" MouseDown="Window_MouseDown" Background="{x:Null}">
     <Window.Resources>
         <Style x:Key="FocusVisual">
             <Setter Property="Control.Template">
@@ -177,58 +177,59 @@
         <Button Style="{DynamicResource ButtonStyle3}" Content="" HorizontalAlignment="Left" Height="60" Margin="8,290,0,0" VerticalAlignment="Top" Width="60" Background="#FFE45757" RenderTransformOrigin="-0.361,0.011" BorderBrush="{x:Null}" Click="Button_Click_2"/>
         <TextBlock HorizontalAlignment="Left" Height="58" Margin="108,16,0,0" TextWrapping="Wrap" Text="DASH BOARD" VerticalAlignment="Top" Width="154" FontWeight="Bold" FontSize="20"/>
         <hc:Card HorizontalAlignment="Left" Height="200" Margin="98,50,0,0" VerticalAlignment="Top" Width="385"/>
-        <TextBlock HorizontalAlignment="Left" Height="34.95" Margin="108,85,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"><Run Text="STATISTICS"/><LineBreak/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Height="34.95" Margin="108,61,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"><Run Text="STATISTICS"/><LineBreak/></TextBlock>
 
         <!--STATISITC 첫번째 -->
-        <Grid Margin="120,120,705,240">
-            <hc:CircleProgressBar HorizontalAlignment="Left" Height="75" VerticalAlignment="Top" Width="75" Value="25" Background="#FFEBF088" Foreground="#FFFFC500" FontSize="18" FontWeight="Bold" Text="25 %"/>
-            <TextBlock HorizontalAlignment="Left" Height="19" Margin="0,92,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="75" TextAlignment="Center" FontWeight="Bold" Foreground="#FF756E6E"><Run Language="ko-kr" Text="Back-Up"/></TextBlock>
-            <Rectangle Fill="#FFEBF088" HorizontalAlignment="Left" Height="15" Margin="0,113,0,0" RadiusY="10" RadiusX="10" VerticalAlignment="Top" Width="75"/>
-            <TextBlock HorizontalAlignment="Left" Height="16" Margin="0,113,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="75" TextAlignment="Center" Foreground="#FFFFC500" Text="Ratio" FontSize="9" FontWeight="Bold"/>
+        <Grid Margin="148,108,678,252">
+            <hc:CircleProgressBar HorizontalAlignment="Center" Height="75" VerticalAlignment="Top" Width="75" Value="99" Background="#FFEBF088" Foreground="#FFFFC500" FontSize="18" FontWeight="Bold" Text="99 %"/>
+            <TextBlock HorizontalAlignment="Left" Height="19" Margin="0,92,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="75" TextAlignment="Center" FontWeight="Bold" Foreground="#FF756E6E"><Run Language="ko-kr" Text="success rate"/></TextBlock>
+            <!--<Rectangle Fill="#FFEBF088" HorizontalAlignment="Left" Height="15" Margin="0,113,0,0" RadiusY="10" RadiusX="10" VerticalAlignment="Top" Width="75"/>
+            <TextBlock HorizontalAlignment="Left" Height="16" Margin="0,113,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="75" TextAlignment="Center" Foreground="#FFFFC500" Text="Ratio" FontSize="9" FontWeight="Bold"/>-->
         </Grid>
 
         <!--STATISITC 두번째 -->
-        <Grid Margin="242,120,583,240">
+        <Grid Margin="312,108,512,252">
             <hc:CircleProgressBar HorizontalAlignment="Left" Height="75" VerticalAlignment="Top" Width="75" Value="50" Background="#FF8893F0" Foreground="#FF7D00FF" FontSize="18" FontWeight="Bold"/>
             <TextBlock HorizontalAlignment="Left" Height="19" Margin="0,92,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="75" TextAlignment="Center" FontWeight="Bold" Foreground="#FF756E6E"><Run Language="ko-kr" Text="Back-Up"/></TextBlock>
-            <Rectangle Fill="#FFB688F0" HorizontalAlignment="Left" Height="15" Margin="0,113,0,0" RadiusY="10" RadiusX="10" VerticalAlignment="Top" Width="75"/>
-            <TextBlock HorizontalAlignment="Left" Height="16" Margin="0,113,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="75" TextAlignment="Center" Foreground="#FFC300FF" Text="Total-Count" FontSize="9" FontWeight="Bold"/>
-        </Grid>
-
-        <!--STATISITC 세번째 -->
-        <Grid Margin="359,120,466,240">
-            <hc:CircleProgressBar HorizontalAlignment="Left" Height="75" VerticalAlignment="Top" Width="75" Value="75" Background="#FF30E83C" Foreground="#FF0B9214" FontSize="18" FontWeight="Bold"/>
-            <TextBlock HorizontalAlignment="Left" Height="19" Margin="0,92,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="75" TextAlignment="Center" FontWeight="Bold" Foreground="#FF756E6E"><Run Language="ko-kr" Text="Back-Up"/></TextBlock>
-            <Rectangle Fill="#FF89E497" HorizontalAlignment="Left" Height="15" Margin="0,113,0,0" RadiusY="10" RadiusX="10" VerticalAlignment="Top" Width="75"/>
-            <TextBlock HorizontalAlignment="Left" Height="16" Margin="0,113,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="75" TextAlignment="Center" Foreground="#FF268E11" Text="Size-Ratio" FontSize="9" FontWeight="Bold"/>
+            <!--<Rectangle Fill="#FFB688F0" HorizontalAlignment="Left" Height="15" Margin="0,113,0,0" RadiusY="10" RadiusX="10" VerticalAlignment="Top" Width="75"/>
+            <TextBlock HorizontalAlignment="Left" Height="16" Margin="0,113,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="75" TextAlignment="Center" Foreground="#FFC300FF" Text="Total-Count" FontSize="9" FontWeight="Bold"/> -->
         </Grid>
 
 
-        <hc:Card Content="" HorizontalAlignment="Left" Height="110" VerticalAlignment="Top" Width="388" Margin="502,38,0,0" Background="#FF944BFB"/>
-        <TextBlock HorizontalAlignment="Left" Height="34.95" Margin="534,72,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Foreground="#FFF7F1F1"><Run Text="MONTHLY "/><Run Language="ko-kr" Text="FILES"/><LineBreak/><Run Text="January"/></TextBlock>
-        <TextBlock HorizontalAlignment="Left" Height="34.95" Margin="534,115,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" Foreground="#FFF7F1F1" FontSize="20" FontWeight="Bold" Text="1.000.000"/>
-        <hc:ComboBox  ShowClearButton="False" SelectedIndex="0" Margin="734,72,52,377" FontSize="10" Foreground="#FF944BFB">
-            <hc:CheckComboBoxItem Content="Daily"/>
-            <hc:CheckComboBoxItem Content="Weekly"/>
-            <hc:CheckComboBoxItem Content="Monthly"/>
-            <hc:CheckComboBoxItem Content="Yearly"/>
+
+
+        <hc:Card HorizontalAlignment="Left" Height="110" VerticalAlignment="Top" Width="388" Margin="502,38,0,0" Background="#FF944BFB">
+            <ListView HorizontalAlignment="Left" Height="42" Margin="12,40,0,0" Width="118" d:ItemsSource="{d:SampleData ItemCount=5}">
+                <ListView.View>
+                    <GridView>
+
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </hc:Card>
+        <TextBlock HorizontalAlignment="Left" Height="35" Margin="529,59,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Foreground="#FFF7F1F1"><Run Language="ko-kr" Text="Total Files Count"/></TextBlock>
+        <hc:ComboBox x:Name="combobox1"  ShowClearButton="False" SelectedIndex="0" Margin="728,72,52,364" FontSize="10" Foreground="#FF944BFB" SelectionChanged="ComboBox_SelectionChanged">
+            <hc:CheckComboBoxItem Content="2022_02_08"/>
+            <hc:CheckComboBoxItem Content="2022_02_09"/>
+            <hc:CheckComboBoxItem Content="2022_02_10"/>
+            <hc:CheckComboBoxItem Content="2022_02_11"/>
+            <hc:CheckComboBoxItem Content="2022_02_12"/>
+            <hc:CheckComboBoxItem Content="2022_02_13"/>
+            <hc:CheckComboBoxItem Content="2022_02_14"/>
+            <hc:CheckComboBoxItem Content="2022_02_15"/>
         </hc:ComboBox>
-        <hc:Card Content="" HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="388" Margin="502,153,0,0" Background="WhiteSmoke"/>
-        <TextBlock HorizontalAlignment="Left" Height="34.95" Margin="516,168,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Foreground="#FF403D3D"><Run Text="MONTHLY "/><Run Language="ko-kr" Text="ERRORS"/><LineBreak/><Run Text="January"/></TextBlock>
-        <hc:WaveProgressBar HorizontalAlignment="Left" Height="64" VerticalAlignment="Top" Width="63" Margin="785,185,0,0" ShowText="False" Value="50"/>
-        <TextBlock HorizontalAlignment="Left" Height="34.95" Margin="516,209,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="100" Foreground="#FF403C3C" FontSize="20" FontWeight="Bold" Text="1.000.000"/>
         <hc:Card HorizontalAlignment="Left" Height="225" VerticalAlignment="Top" Width="385" Margin="98,265,0,0"/>
         <hc:Card HorizontalAlignment="Left" Height="211" VerticalAlignment="Top" Width="388" Margin="502,263,0,0">
-            <Path Data="M479.33333,70 L480,270" Fill="#FFCBCBD2" HorizontalAlignment="Left" Height="200" Margin="172,0,0,0" Stretch="Fill" VerticalAlignment="Top" Width="2" Stroke="#FFC7C3C3"/>
+            
         </hc:Card>
-        <TextBlock HorizontalAlignment="Left" Height="16" Margin="108,282,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="96"><Run Language="ko-kr" Text="CHAT"/><LineBreak/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Height="16" Margin="108,282,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="96"><Run Language="ko-kr" Text="Chart List"/><LineBreak/></TextBlock>
         <hc:ScrollViewer IsInertiaEnabled="True" Margin="108,311,490,21">
             <WrapPanel Orientation="Horizontal" Height="403" >
                 <Grid Width="300" Height="61">
-                    <Rectangle Height="45" Width="45" Margin="25,6,230,10" RadiusX="22.5" RadiusY="22.5" Fill="#FFC28EE6"/>
+                    <Rectangle Margin="27,10,215,10"  Fill="#FFC28EE6"/>
 
-                    <Button x:Name="ToT_Backup_Avg_Time" Margin="32,13,0,0" FontWeight="Bold" FontSize="16" Content="E" Background="#FFC28EE6" BorderBrush="{x:Null}" Click="ToT_Backup_Avg_Time_Click" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                    <TextBlock HorizontalAlignment="Left" Height="30" Margin="90,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="160" Foreground="#FF252424" FontSize="14" FontWeight="Bold" TextAlignment="Center"><Run Language="ko-kr" Text="ToT Backup AvgTime"/></TextBlock>
+                    <Button x:Name="ToT_Backup_Avg_Time" Margin="31,10,0,0" FontWeight="Bold" FontSize="14" Content="BTN" Background="#FFC28EE6" BorderBrush="{x:Null}" Click="ToT_Backup_Avg_Time_Click" HorizontalAlignment="Left" Height="28" VerticalAlignment="Top"/>
+                    <TextBlock HorizontalAlignment="Left" Height="30" Margin="90,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="160" Foreground="#FF252424" FontSize="14" FontWeight="Bold" TextAlignment="Center"><Run Language="ko-kr" Text="Backup Method Ratio"/></TextBlock>
                 </Grid>
                 <Grid Width="300" Height="61">
                     <Rectangle Height="45" Width="45" Margin="25,8,230,8" RadiusX="22.5" RadiusY="22.5" Fill="#FFC28EE6"/>
@@ -257,7 +258,33 @@
                 </Grid>
             </WrapPanel>
         </hc:ScrollViewer>
-        <TextBlock HorizontalAlignment="Left" Height="16" Margin="516,282,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="96"><Run Language="ko-kr" Text="CHAT"/><LineBreak/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Height="16" Margin="516,282,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="96"><Run Language="ko-kr" Text="File Size Data"/><LineBreak/></TextBlock>
+        <hc:Card HorizontalAlignment="Left" Height="110" VerticalAlignment="Top" Width="388" Margin="502,151,0,0" Background="#FF944BFB">
+            <ListView HorizontalAlignment="Left" Height="42" Margin="12,40,0,0" Width="118" d:ItemsSource="{d:SampleData ItemCount=5}">
+                <d:ListView.View>
+                    <GridView/>
+                </d:ListView.View>
+            </ListView>
+        </hc:Card>
+        <TextBlock HorizontalAlignment="Left" Height="35" Margin="529,172,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Foreground="#FFF7F1F1"><Run Language="ko-kr" Text="Total Error Count"/></TextBlock>
+        <hc:ComboBox x:Name="combobox1_Copy"  ShowClearButton="False" SelectedIndex="0" Margin="728,185,52,242" FontSize="10" Foreground="#FF944BFB" SelectionChanged="ComboBox_SelectionChanged">
+            <hc:CheckComboBoxItem Content="2022_02_08"/>
+            <hc:CheckComboBoxItem Content="2022_02_09"/>
+            <hc:CheckComboBoxItem Content="2022_02_10"/>
+            <hc:CheckComboBoxItem Content="2022_02_11"/>
+            <hc:CheckComboBoxItem Content="2022_02_12"/>
+            <hc:CheckComboBoxItem Content="2022_02_13"/>
+            <hc:CheckComboBoxItem Content="2022_02_14"/>
+            <hc:CheckComboBoxItem Content="2022_02_15"/>
+        </hc:ComboBox>
 
+        <lvc:CartesianChart Series="{Binding SeriesCollection}" LegendLocation="Top" Margin="516,317,44,10" >
+            <lvc:CartesianChart.AxisY>
+                <lvc:Axis Title="Second" LabelFormatter="{Binding YFormatter}"></lvc:Axis>
+            </lvc:CartesianChart.AxisY>
+            <lvc:CartesianChart.AxisX>
+                <lvc:Axis Title="Day" Labels="{Binding Labels}"></lvc:Axis>
+            </lvc:CartesianChart.AxisX>
+        </lvc:CartesianChart>
     </Grid>
 </Window>
