@@ -11,14 +11,33 @@
     <Grid>
         <!-- filter combobox -->
         <ListView x:Name="LogList" Margin="0, 50, 0, 0">
+            
+            
             <ListView.View>
                 <GridView>
-
+                    <GridView.Columns>                        
+                        <GridViewColumn Header="JobStatus" DisplayMemberBinding="{Binding JobStatus}"></GridViewColumn>
+                        <GridViewColumn Header="ErrorCode" DisplayMemberBinding="{Binding ErrorCode}"></GridViewColumn>
+                        <GridViewColumn Header="JobType" DisplayMemberBinding="{Binding JobType}"></GridViewColumn>
+                        <GridViewColumn Header="BackupMethod" DisplayMemberBinding="{Binding BackupMethod}"></GridViewColumn>
+                        <GridViewColumn Header="Schedule" DisplayMemberBinding="{Binding Schedule}"></GridViewColumn>
+                    </GridView.Columns>
+                    
                 </GridView>
-            </ListView.View>
+            </ListView.View>          
+            
+            
+            
         </ListView>
 
-        <ComboBox Name="FilterBy" HorizontalAlignment="Left" VerticalAlignment="Top" Width="244" Margin="10,10,0,0"/>
+        <ComboBox Name="FilterBy" HorizontalAlignment="Left" VerticalAlignment="Top" Width="244" Margin="10,10,0,0" SelectedIndex="0">
+            <ComboBoxItem Content="Job Status"></ComboBoxItem>            
+            <ComboBoxItem Content="Error Code"></ComboBoxItem>
+            <ComboBoxItem Content="Job Type"></ComboBoxItem>
+            <ComboBoxItem Content="Backup Method"></ComboBoxItem>
+            <ComboBoxItem Content="Schedule"></ComboBoxItem>
+        </ComboBox>
+            
         <TextBox x:Name="FilterText" HorizontalAlignment="Center" VerticalAlignment="Top" Width="244" Margin="0,10,0,0"/>
 
 

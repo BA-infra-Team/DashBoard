@@ -97,6 +97,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Data.cs" />
     <Compile Include="TotalError.xaml.cs">
       <DependentUpon>TotalError.xaml</DependentUpon>
     </Compile>
@@ -199,6 +200,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="error-icon-4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="chart11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="chart5.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

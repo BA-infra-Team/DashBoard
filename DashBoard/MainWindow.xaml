@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DashBoard"
         mc:Ignorable="d"
-        Title="MainWindow" Height="500" Width="900"
+        Title="MainWindow" Height="550" Width="950"
         xmlns:hc="https://handyorg.github.io/handycontrol" xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf" MouseDown="Window_MouseDown" Background="{x:Null}">
     <Window.Resources>
         <Style x:Key="FocusVisual">
@@ -168,117 +168,160 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        <Style x:Key="FocusVisual3">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="2" StrokeDashArray="1 2" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" SnapsToDevicePixels="true" StrokeThickness="1"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <SolidColorBrush x:Key="Button.Static.Background3" Color="#FFDDDDDD"/>
+        <SolidColorBrush x:Key="Button.Static.Border3" Color="#FF707070"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Background3" Color="#FFBEE6FD"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Border3" Color="#FF3C7FB1"/>
+        <SolidColorBrush x:Key="Button.Pressed.Background3" Color="#FFC4E5F6"/>
+        <SolidColorBrush x:Key="Button.Pressed.Border3" Color="#FF2C628B"/>
+        <SolidColorBrush x:Key="Button.Disabled.Background3" Color="#FFF4F4F4"/>
+        <SolidColorBrush x:Key="Button.Disabled.Border3" Color="#FFADB2B5"/>
+        <Style x:Key="ButtonStyle4" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual3}"/>
+            <Setter Property="Background" Value="{StaticResource Button.Static.Background3}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border3}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" Background="#3FE0D4D4" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="30,30,30,30" SnapsToDevicePixels="true">
+                            <Image Height="40" Margin="0,-1,0,1" Source="/chart5.png" Width="40"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.MouseOver.Background3}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border3}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Pressed.Background3}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border3}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background3}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border3}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
     </Window.Resources>
     <Grid RenderTransformOrigin="0.511,0.527" Background="#FFDED4D4">
         <Rectangle HorizontalAlignment="Left" Height="500" VerticalAlignment="Center" Width="80" Fill="#FFA043E4"/>
         <Image HorizontalAlignment="Left" Height="60" Margin="8,8,0,0" VerticalAlignment="Top" Width="60" Source="/Statistic2 (4).png"/>
         <Button Style="{DynamicResource ButtonStyle1}" Content="" HorizontalAlignment="Left" Height="60" Margin="8,90,0,0" VerticalAlignment="Top" Width="60" Background="#FFF9F3F3" RenderTransformOrigin="-0.361,0.011" BorderBrush="{x:Null}" Click="Button_Click"/>
-        <Button Style="{DynamicResource ButtonStyle2}" Content="" HorizontalAlignment="Left" Height="60" Margin="8,190,0,0" VerticalAlignment="Top" Width="60" Background="#FFE45757" RenderTransformOrigin="-0.361,0.011" BorderBrush="{x:Null}" Click="Button_Click_1"/>
+        <Button Style="{DynamicResource ButtonStyle2}" HorizontalAlignment="Left" Height="60" Margin="8,190,0,0" VerticalAlignment="Top" Width="60" Background="#FFE45757" RenderTransformOrigin="-0.361,0.011" BorderBrush="{x:Null}" Click="Button_Click_1">
+            <Button Style="{DynamicResource ButtonStyle2}" Content="" HorizontalAlignment="Left" Height="60" VerticalAlignment="Top" Width="60" Background="#FFE45757" RenderTransformOrigin="-0.361,0.011" BorderBrush="{x:Null}" Click="Button_Click_1"/>
+        </Button>
         <Button Style="{DynamicResource ButtonStyle3}" Content="" HorizontalAlignment="Left" Height="60" Margin="8,290,0,0" VerticalAlignment="Top" Width="60" Background="#FFE45757" RenderTransformOrigin="-0.361,0.011" BorderBrush="{x:Null}" Click="Button_Click_2"/>
-        <TextBlock HorizontalAlignment="Left" Height="58" Margin="108,16,0,0" TextWrapping="Wrap" Text="DASH BOARD" VerticalAlignment="Top" Width="154" FontWeight="Bold" FontSize="20"/>
-        <hc:Card HorizontalAlignment="Left" Height="200" Margin="98,50,0,0" VerticalAlignment="Top" Width="385"/>
+        <TextBlock HorizontalAlignment="Left" Height="58" Margin="108,16,0,0" TextWrapping="Wrap" Text="DASHBOARD" VerticalAlignment="Top" Width="154" FontWeight="Bold" FontSize="20"/>
+        <hc:Card HorizontalAlignment="Left" Height="210" Margin="98,50,0,0" VerticalAlignment="Top" Width="399"/>
         <TextBlock HorizontalAlignment="Left" Height="34.95" Margin="108,61,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"><Run Text="STATISTICS"/><LineBreak/></TextBlock>
 
         <!--STATISITC 첫번째 -->
         <Grid Margin="148,108,678,252">
-            <hc:CircleProgressBar HorizontalAlignment="Center" Height="75" VerticalAlignment="Top" Width="75" Value="99" Background="#FFEBF088" Foreground="#FFFFC500" FontSize="18" FontWeight="Bold" Text="99 %"/>
-            <TextBlock HorizontalAlignment="Left" Height="19" Margin="0,92,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="75" TextAlignment="Center" FontWeight="Bold" Foreground="#FF756E6E"><Run Language="ko-kr" Text="success rate"/></TextBlock>
+            <hc:CircleProgressBar HorizontalAlignment="Center" Height="70" VerticalAlignment="Top" Width="70" Value="99" Background="#FFEBF088" Foreground="#FFFFC500" FontSize="18" FontWeight="Bold" Text="99 %"/>
+            <TextBlock HorizontalAlignment="Left" Height="19" Margin="20,92,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="75" TextAlignment="Center" FontWeight="Bold" Foreground="#FF756E6E"><Run Language="ko-kr" Text="success rate"/></TextBlock>
             <!--<Rectangle Fill="#FFEBF088" HorizontalAlignment="Left" Height="15" Margin="0,113,0,0" RadiusY="10" RadiusX="10" VerticalAlignment="Top" Width="75"/>
             <TextBlock HorizontalAlignment="Left" Height="16" Margin="0,113,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="75" TextAlignment="Center" Foreground="#FFFFC500" Text="Ratio" FontSize="9" FontWeight="Bold"/>-->
         </Grid>
 
         <!--STATISITC 두번째 -->
         <Grid Margin="312,108,512,252">
-            <hc:CircleProgressBar HorizontalAlignment="Left" Height="75" VerticalAlignment="Top" Width="75" Value="50" Background="#FF8893F0" Foreground="#FF7D00FF" FontSize="18" FontWeight="Bold"/>
-            <TextBlock HorizontalAlignment="Left" Height="19" Margin="0,92,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="75" TextAlignment="Center" FontWeight="Bold" Foreground="#FF756E6E"><Run Language="ko-kr" Text="Back-Up"/></TextBlock>
+            <hc:CircleProgressBar HorizontalAlignment="Left" Height="70" VerticalAlignment="Top" Width="70" Value="50" Background="#FF8893F0" Foreground="#FF7D00FF" FontSize="18" FontWeight="Bold"/>
+            <TextBlock HorizontalAlignment="Left" Height="19" Margin="0,92,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="75" TextAlignment="Center" FontWeight="Bold" Foreground="#FF756E6E"><Run Language="ko-kr" Text="Files Write"/></TextBlock>
             <!--<Rectangle Fill="#FFB688F0" HorizontalAlignment="Left" Height="15" Margin="0,113,0,0" RadiusY="10" RadiusX="10" VerticalAlignment="Top" Width="75"/>
             <TextBlock HorizontalAlignment="Left" Height="16" Margin="0,113,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="75" TextAlignment="Center" Foreground="#FFC300FF" Text="Total-Count" FontSize="9" FontWeight="Bold"/> -->
         </Grid>
 
-
-
-
         <hc:Card HorizontalAlignment="Left" Height="110" VerticalAlignment="Top" Width="388" Margin="502,38,0,0" Background="#FF944BFB">
-            <ListView HorizontalAlignment="Left" Height="42" Margin="12,40,0,0" Width="118" d:ItemsSource="{d:SampleData ItemCount=5}">
-                <ListView.View>
-                    <GridView>
-
-                    </GridView>
-                </ListView.View>
-            </ListView>
+            <hc:ComboBox x:Name="combobox1"  ShowClearButton="False" SelectedIndex="0" Margin="193,0,23,0" FontSize="10" Foreground="#FF944BFB" Height="98">
+                <hc:CheckComboBoxItem Content="Total Files"/>
+                <hc:CheckComboBoxItem Content="2022_02_08"/>
+                <hc:CheckComboBoxItem Content="2022_02_09"/>
+                <hc:CheckComboBoxItem Content="2022_02_10"/>
+                <hc:CheckComboBoxItem Content="2022_02_11"/>
+                <hc:CheckComboBoxItem Content="2022_02_12"/>
+                <hc:CheckComboBoxItem Content="2022_02_13"/>
+                <hc:CheckComboBoxItem Content="2022_02_14"/>
+                <hc:CheckComboBoxItem Content="2022_02_15"/>
+            </hc:ComboBox>
         </hc:Card>
         <TextBlock HorizontalAlignment="Left" Height="35" Margin="529,59,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Foreground="#FFF7F1F1"><Run Language="ko-kr" Text="Total Files Count"/></TextBlock>
-        <hc:ComboBox x:Name="combobox1"  ShowClearButton="False" SelectedIndex="0" Margin="728,72,52,364" FontSize="10" Foreground="#FF944BFB" SelectionChanged="ComboBox_SelectionChanged">
-            <hc:CheckComboBoxItem Content="2022_02_08"/>
-            <hc:CheckComboBoxItem Content="2022_02_09"/>
-            <hc:CheckComboBoxItem Content="2022_02_10"/>
-            <hc:CheckComboBoxItem Content="2022_02_11"/>
-            <hc:CheckComboBoxItem Content="2022_02_12"/>
-            <hc:CheckComboBoxItem Content="2022_02_13"/>
-            <hc:CheckComboBoxItem Content="2022_02_14"/>
-            <hc:CheckComboBoxItem Content="2022_02_15"/>
-        </hc:ComboBox>
+
+        <hc:Card HorizontalAlignment="Left" Height="110" VerticalAlignment="Top" Width="388" Margin="502,151,0,0" Background="#FF944BFB">
+            <hc:ComboBox x:Name="combobox1_Copy"  ShowClearButton="False" SelectedIndex="0" Margin="194,0,22,0" FontSize="10" Foreground="#FF944BFB" Height="107">
+                <hc:CheckComboBoxItem Content="Total Errors"/>
+                <hc:CheckComboBoxItem Content="2022_02_08"/>
+                <hc:CheckComboBoxItem Content="2022_02_09"/>
+                <hc:CheckComboBoxItem Content="2022_02_10"/>
+                <hc:CheckComboBoxItem Content="2022_02_11"/>
+                <hc:CheckComboBoxItem Content="2022_02_12"/>
+                <hc:CheckComboBoxItem Content="2022_02_13"/>
+                <hc:CheckComboBoxItem Content="2022_02_14"/>
+                <hc:CheckComboBoxItem Content="2022_02_15"/>
+            </hc:ComboBox>
+        </hc:Card>
+        <TextBlock HorizontalAlignment="Left" Height="35" Margin="529,172,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Foreground="#FFF7F1F1"><Run Language="ko-kr" Text="Total Error Count"/></TextBlock>
+        
+        <!--<hc:TextBox x:Name="textbox1" Margin="521,95,280,403"></hc:TextBox>-->
         <hc:Card HorizontalAlignment="Left" Height="225" VerticalAlignment="Top" Width="385" Margin="98,265,0,0"/>
         <hc:Card HorizontalAlignment="Left" Height="211" VerticalAlignment="Top" Width="388" Margin="502,263,0,0">
-            
+
         </hc:Card>
         <TextBlock HorizontalAlignment="Left" Height="16" Margin="108,282,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="96"><Run Language="ko-kr" Text="Chart List"/><LineBreak/></TextBlock>
         <hc:ScrollViewer IsInertiaEnabled="True" Margin="108,311,490,21">
             <WrapPanel Orientation="Horizontal" Height="403" >
                 <Grid Width="300" Height="61">
-                    <Rectangle Margin="27,10,215,10"  Fill="#FFC28EE6"/>
-
-                    <Button x:Name="ToT_Backup_Avg_Time" Margin="31,10,0,0" FontWeight="Bold" FontSize="14" Content="BTN" Background="#FFC28EE6" BorderBrush="{x:Null}" Click="ToT_Backup_Avg_Time_Click" HorizontalAlignment="Left" Height="28" VerticalAlignment="Top"/>
-                    <TextBlock HorizontalAlignment="Left" Height="30" Margin="90,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="160" Foreground="#FF252424" FontSize="14" FontWeight="Bold" TextAlignment="Center"><Run Language="ko-kr" Text="Backup Method Ratio"/></TextBlock>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="13*"/>
+                        <ColumnDefinition Width="37*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock HorizontalAlignment="Left" Height="30" Margin="12,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="160" Foreground="#FF252424" FontSize="14" FontWeight="Bold" TextAlignment="Center" Grid.Column="1"><Run Language="ko-kr" Text="Backup Method Ratio"/></TextBlock>
+                    <Button x:Name="Total_Type_Method" Style="{DynamicResource ButtonStyle4}" Content="" HorizontalAlignment="Left" Height="60" VerticalAlignment="Center" Width="60" Background="#FFE45757" RenderTransformOrigin="-0.361,0.011" BorderBrush="{x:Null}" Click="Total_Type_Method_Click" />
                 </Grid>
                 <Grid Width="300" Height="61">
-                    <Rectangle Height="45" Width="45" Margin="25,8,230,8" RadiusX="22.5" RadiusY="22.5" Fill="#FFC28EE6"/>
-                    <Button x:Name="Total_Files_Ratio" Content="F" Margin="32,0,0,0" FontWeight="Bold" FontSize="16" Background="#FFC28EE6" BorderBrush="{x:Null}" HorizontalAlignment="Left" />
                     <TextBlock HorizontalAlignment="Left" Height="30" Margin="90,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="160" Foreground="#FF252424" FontSize="14" FontWeight="Bold" TextAlignment="Center"><Run Language="ko-kr" Text="Total Files Ratio"/></TextBlock>
+                    <Button Style="{DynamicResource ButtonStyle4}" Content="" HorizontalAlignment="Left" Height="60" VerticalAlignment="Center" Width="60" Background="#FFE45757" RenderTransformOrigin="-0.361,0.011" BorderBrush="{x:Null}" Click="Button_Click_1"/>
                 </Grid>
                 <Grid Width="300" Height="61">
-                    <Rectangle Height="45" Width="45" Margin="25,7,230,9" RadiusX="22.5" RadiusY="22.5" Fill="#FFC28EE6"/>
-                    <Button Content="F" Margin="32,14,0,0" FontWeight="Bold" FontSize="16"  Background="#FFC28EE6" BorderBrush="{x:Null}" HorizontalAlignment="Left" VerticalAlignment="Top"/>
                     <TextBlock HorizontalAlignment="Left" Height="47" Margin="90,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="160" Foreground="#FF252424" FontSize="14" FontWeight="Bold" TextAlignment="Center"><Run Language="ko-kr" Text="Total Back-Up Ratio"/></TextBlock>
+                    <Button Style="{DynamicResource ButtonStyle4}" HorizontalAlignment="Left" Height="60" VerticalAlignment="Center" Width="60" Background="#FFE45757" RenderTransformOrigin="-0.361,0.011" BorderBrush="{x:Null}" Click="Button_Click_1">
+                    </Button>
                 </Grid>
                 <Grid Width="300" Height="61">
-                    <Rectangle Height="45" Width="45" Margin="25,0,230,16" RadiusX="22.5" RadiusY="22.5" Fill="#FFC28EE6"/>
-                    <Button Content="F" Margin="32,0,0,0" FontWeight="Bold" FontSize="16"  Background="#FFC28EE6" BorderBrush="{x:Null}" HorizontalAlignment="Left"/>
-                    <TextBlock HorizontalAlignment="Left" Height="30" Margin="90,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="160" Foreground="#FF252424" FontSize="14" FontWeight="Bold" TextAlignment="Center"><Run Language="ko-kr" Text="Total Error Ratio"/></TextBlock>
-                </Grid>
-                <Grid Width="300" Height="61">
-                    <Rectangle Height="45" Width="45" Margin="25,8,230,8" RadiusX="22.5" RadiusY="22.5" Fill="#FFC28EE6"/>
-                    <Button Content="F" Margin="32,0,0,0" FontWeight="Bold" FontSize="16"  Background="#FFC28EE6" BorderBrush="{x:Null}" HorizontalAlignment="Left"/>
-                    <TextBlock HorizontalAlignment="Left" Height="30" Margin="90,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="160" Foreground="#FF252424" FontSize="14" FontWeight="Bold" TextAlignment="Center"><Run Language="ko-kr" Text="Total Files Ratio"/></TextBlock>
-                </Grid>
-                <Grid Width="300" Height="61">
-                    <Rectangle Height="45" Width="45" Margin="25,6,230,10" RadiusX="22.5" RadiusY="22.5" Fill="#FFC28EE6"/>
-                    <Button Content="F" Margin="32,14,0,0" FontWeight="Bold" FontSize="16"  Background="#FFC28EE6" BorderBrush="{x:Null}" HorizontalAlignment="Left" VerticalAlignment="Top"/>
                     <TextBlock HorizontalAlignment="Left" Height="47" Margin="90,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="160" Foreground="#FF252424" FontSize="14" FontWeight="Bold" TextAlignment="Center"><Run Language="ko-kr" Text="Total Back-Up Ratio"/></TextBlock>
+                    <Button Style="{DynamicResource ButtonStyle4}" HorizontalAlignment="Left" Height="60" VerticalAlignment="Center" Width="60" Background="#FFE45757" RenderTransformOrigin="-0.361,0.011" BorderBrush="{x:Null}" Click="Button_Click_1"/>
+                </Grid>
+                <Grid Width="300" Height="61">
+                    <TextBlock HorizontalAlignment="Left" Height="47" Margin="90,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="160" Foreground="#FF252424" FontSize="14" FontWeight="Bold" TextAlignment="Center"><Run Language="ko-kr" Text="Total Back-Up Ratio"/></TextBlock>
+                    <Button Style="{DynamicResource ButtonStyle4}" HorizontalAlignment="Left" Height="60" VerticalAlignment="Center" Width="60" Background="#FFE45757" RenderTransformOrigin="-0.361,0.011" BorderBrush="{x:Null}" Click="Button_Click_1"/>
+                </Grid>
+                <Grid Width="300" Height="61">
+                    <TextBlock HorizontalAlignment="Left" Height="47" Margin="90,0,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="160" Foreground="#FF252424" FontSize="14" FontWeight="Bold" TextAlignment="Center"><Run Language="ko-kr" Text="Total Back-Up Ratio"/></TextBlock>
+                    <Button Style="{DynamicResource ButtonStyle4}" HorizontalAlignment="Left" Height="60" VerticalAlignment="Center" Width="60" Background="#FFE45757" RenderTransformOrigin="-0.361,0.011" BorderBrush="{x:Null}" Click="Button_Click_1"/>
                 </Grid>
             </WrapPanel>
         </hc:ScrollViewer>
         <TextBlock HorizontalAlignment="Left" Height="16" Margin="516,282,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="96"><Run Language="ko-kr" Text="File Size Data"/><LineBreak/></TextBlock>
-        <hc:Card HorizontalAlignment="Left" Height="110" VerticalAlignment="Top" Width="388" Margin="502,151,0,0" Background="#FF944BFB">
-            <ListView HorizontalAlignment="Left" Height="42" Margin="12,40,0,0" Width="118" d:ItemsSource="{d:SampleData ItemCount=5}">
-                <d:ListView.View>
-                    <GridView/>
-                </d:ListView.View>
-            </ListView>
-        </hc:Card>
-        <TextBlock HorizontalAlignment="Left" Height="35" Margin="529,172,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Foreground="#FFF7F1F1"><Run Language="ko-kr" Text="Total Error Count"/></TextBlock>
-        <hc:ComboBox x:Name="combobox1_Copy"  ShowClearButton="False" SelectedIndex="0" Margin="728,185,52,242" FontSize="10" Foreground="#FF944BFB" SelectionChanged="ComboBox_SelectionChanged">
-            <hc:CheckComboBoxItem Content="2022_02_08"/>
-            <hc:CheckComboBoxItem Content="2022_02_09"/>
-            <hc:CheckComboBoxItem Content="2022_02_10"/>
-            <hc:CheckComboBoxItem Content="2022_02_11"/>
-            <hc:CheckComboBoxItem Content="2022_02_12"/>
-            <hc:CheckComboBoxItem Content="2022_02_13"/>
-            <hc:CheckComboBoxItem Content="2022_02_14"/>
-            <hc:CheckComboBoxItem Content="2022_02_15"/>
-        </hc:ComboBox>
-
-        <lvc:CartesianChart Series="{Binding SeriesCollection}" LegendLocation="Top" Margin="516,317,44,10" >
+                
+        <lvc:CartesianChart Series="{Binding SeriesCollection}" LegendLocation="Top" Margin="516,314,85,47" >
             <lvc:CartesianChart.AxisY>
                 <lvc:Axis Title="Second" LabelFormatter="{Binding YFormatter}"></lvc:Axis>
             </lvc:CartesianChart.AxisY>

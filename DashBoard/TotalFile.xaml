@@ -8,9 +8,9 @@
         mc:Ignorable="d"
         Title="TotalFile" Height="450" Width="800">
     <Grid>
-        <TextBlock Text="Job Status Error Ratio" Margin="10,32,592,355" FontWeight="Bold" FontSize="16" Foreground="#FF2148BF"/>
+        <TextBlock Text="Job Status Error Ratio" Margin="400,32,202,355" FontWeight="Bold" FontSize="16" Foreground="#FF2148BF"/>
         <lvc:PieChart Name="Chart" Series="{Binding SeriesCollection}" 
-                      LegendLocation="Right" InnerRadius="50" Margin="10,79,443,70">
+                      LegendLocation="Right" InnerRadius="50" Margin="400,84,53,65">
             <lvc:PieChart.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF4B2BEA" Offset="0"/>
@@ -24,9 +24,9 @@
                 <lvc:DefaultTooltip BulletSize="20"></lvc:DefaultTooltip>
             </lvc:PieChart.DataTooltip>
         </lvc:PieChart>
-        <TextBlock Text="Total Error Ratio" Margin="400,32,258,355" FontWeight="Bold" FontSize="16" Foreground="#FF2148BF"/>
+        <TextBlock Text="Total Error Ratio" Margin="10,32,648,355" FontWeight="Bold" FontSize="16" Foreground="#FF2148BF"/>
         <lvc:PieChart x:Name="Chart_Copy" Series="{Binding SeriesCollection1}" 
-            LegendLocation="Right" InnerRadius="50" Margin="400,79,53,70">
+            LegendLocation="Right" InnerRadius="50" Margin="10,84,443,65">
             <lvc:PieChart.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF4B2BEA" Offset="0"/>

@@ -29,13 +29,7 @@ namespace DashBoard
 
             SeriesCollection = new SeriesCollection
             {
-                new PieSeries
-                {
-                    Title = "Completed",
-                    Values = new ChartValues<ObservableValue> { new ObservableValue(ChartData.Total_Error_Ratio_PieChart_Total_Completed_Count) },
-                    DataLabels = true
-
-                },
+               
                 new PieSeries
                 {
                     Title = "Canceled",
@@ -75,7 +69,7 @@ namespace DashBoard
                 new PieSeries
                 {
                     Title = "Canceled",
-                    Values = new ChartValues<ObservableValue> { new ObservableValue(ChartData.Error_Ratio_By_Job_Status_PieChart_Canceled_Error_Count) },
+                    Values = new ChartValues<ObservableValue> { new ObservableValue(ChartData.Total_Error_Ratio_PieChart_Total_Error_Count) },
                     DataLabels = true
                 },
                

@@ -19,9 +19,19 @@ namespace DashBoard
     /// </summary>
     public partial class filter : Window
     {
+        Data[] Datas = new Data[]
+        {
+            new Data("Completed", "-", "Informix Onbar Backup", "Full Backup", "testsc_2"),
+            new Data("Completed", "-", "Informix Onbar Backup", "Full Backup", "testsc_1"),
+            new Data("Completed", "-", "Informix Onbar Backup", "Incremental Backup", "testsc_4"),
+            new Data("Completed", "-", "Informix Onbar Backup", "Incremental Backup", "testsc_3"),
+            new Data("Completed", "-", "File Backup", "Archive Backup", "testsc_2"),
+        };
         public filter()
         {
             InitializeComponent();
+
+            LogList.ItemsSource = Datas;
         }
         /*private void dtp_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
         {

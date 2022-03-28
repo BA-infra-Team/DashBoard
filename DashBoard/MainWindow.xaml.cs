@@ -361,19 +361,17 @@ namespace DashBoard
             TotalFile totalfile = new TotalFile();
 
             totalfile.Show();
-        }
+        }    
 
-        private void ToT_Backup_Avg_Time_Click(object sender, RoutedEventArgs e)
+       
+
+        private void Total_Type_Method_Click(object sender, RoutedEventArgs e)
         {
-           
             TotalError totalerror = new TotalError();
 
             totalerror.Show();
         }
 
-        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
+  
     }
 }
