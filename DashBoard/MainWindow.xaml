@@ -231,7 +231,7 @@
         </Button>
         <Button Style="{DynamicResource ButtonStyle3}" Content="" HorizontalAlignment="Left" Height="60" Margin="8,290,0,0" VerticalAlignment="Top" Width="60" Background="#FFE45757" RenderTransformOrigin="-0.361,0.011" BorderBrush="{x:Null}" Click="Button_Click_2"/>
         <TextBlock HorizontalAlignment="Left" Height="58" Margin="108,16,0,0" TextWrapping="Wrap" Text="DASHBOARD" VerticalAlignment="Top" Width="154" FontWeight="Bold" FontSize="20"/>
-        <hc:Card HorizontalAlignment="Left" Height="210" Margin="98,50,0,0" VerticalAlignment="Top" Width="399"/>
+        <hc:Card HorizontalAlignment="Left" Height="210" Margin="98,50,0,0" VerticalAlignment="Top" Width="399" Background="White"/>
         <TextBlock HorizontalAlignment="Left" Height="34.95" Margin="108,61,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"><Run Text="STATISTICS"/><LineBreak/></TextBlock>
 
         <!--STATISITC 첫번째 -->
@@ -251,22 +251,26 @@
         </Grid>
 
         <hc:Card HorizontalAlignment="Left" Height="110" VerticalAlignment="Top" Width="388" Margin="502,38,0,0" Background="#FF944BFB">
-            <hc:ComboBox x:Name="combobox1"  ShowClearButton="False" SelectedIndex="0" Margin="193,0,23,0" FontSize="10" Foreground="#FF944BFB" Height="98">
-                <hc:CheckComboBoxItem Content="Total Files"/>
-                <hc:CheckComboBoxItem Content="2022_02_08"/>
-                <hc:CheckComboBoxItem Content="2022_02_09"/>
-                <hc:CheckComboBoxItem Content="2022_02_10"/>
-                <hc:CheckComboBoxItem Content="2022_02_11"/>
-                <hc:CheckComboBoxItem Content="2022_02_12"/>
-                <hc:CheckComboBoxItem Content="2022_02_13"/>
-                <hc:CheckComboBoxItem Content="2022_02_14"/>
-                <hc:CheckComboBoxItem Content="2022_02_15"/>
-            </hc:ComboBox>
+            <ComboBox x:Name="combobox1" HorizontalAlignment="Left" Height="35" Margin="192,0,0,0" Width="185" SelectedIndex="0" SelectionChanged="combobox1_SelectionChanged" Loaded="combobox1_Loaded">
+                <!--
+                <ComboBoxItem IsSelected="True" Content="Total Files"/>
+                <ComboBoxItem IsSelected="True" Content="2022_02_08"/>
+                <ComboBoxItem IsSelected="True" Content="2022_02_09"/>
+                <ComboBoxItem IsSelected="True" Content="2022_02_10"/>
+                <ComboBoxItem IsSelected="True" Content="2022_02_11"/>
+                <ComboBoxItem IsSelected="True" Content="2022_02_12"/>
+                <ComboBoxItem IsSelected="True" Content="2022_02_13"/>
+                <ComboBoxItem IsSelected="True" Content="2022_02_14"/>
+                <ComboBoxItem IsSelected="True" Content="2022_02_15"/>
+                -->
+            </ComboBox>
         </hc:Card>
         <TextBlock HorizontalAlignment="Left" Height="35" Margin="529,59,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Foreground="#FFF7F1F1"><Run Language="ko-kr" Text="Total Files Count"/></TextBlock>
+        <TextBox x:Name="textbox1" HorizontalAlignment="Left" Height="40" Margin="516,94,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="135"/>
 
         <hc:Card HorizontalAlignment="Left" Height="110" VerticalAlignment="Top" Width="388" Margin="502,151,0,0" Background="#FF944BFB">
-            <hc:ComboBox x:Name="combobox1_Copy"  ShowClearButton="False" SelectedIndex="0" Margin="194,0,22,0" FontSize="10" Foreground="#FF944BFB" Height="107">
+            <hc:ComboBox x:Name="combobox2"  ShowClearButton="False" SelectedIndex="0" Margin="192,0,0,0" FontSize="10" Foreground="#FF944BFB" Height="35" Width="185" Loaded="combobox2_Loaded" SelectionChanged="combobox2_SelectionChanged">
+                <!--
                 <hc:CheckComboBoxItem Content="Total Errors"/>
                 <hc:CheckComboBoxItem Content="2022_02_08"/>
                 <hc:CheckComboBoxItem Content="2022_02_09"/>
@@ -276,11 +280,12 @@
                 <hc:CheckComboBoxItem Content="2022_02_13"/>
                 <hc:CheckComboBoxItem Content="2022_02_14"/>
                 <hc:CheckComboBoxItem Content="2022_02_15"/>
+                -->
             </hc:ComboBox>
         </hc:Card>
         <TextBlock HorizontalAlignment="Left" Height="35" Margin="529,172,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Foreground="#FFF7F1F1"><Run Language="ko-kr" Text="Total Error Count"/></TextBlock>
-        
-        <!--<hc:TextBox x:Name="textbox1" Margin="521,95,280,403"></hc:TextBox>-->
+        <TextBox x:Name="textbox2" HorizontalAlignment="Left" Height="40" Margin="516,208,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="135"/>
+
         <hc:Card HorizontalAlignment="Left" Height="225" VerticalAlignment="Top" Width="385" Margin="98,265,0,0"/>
         <hc:Card HorizontalAlignment="Left" Height="211" VerticalAlignment="Top" Width="388" Margin="502,263,0,0">
 
@@ -320,7 +325,7 @@
             </WrapPanel>
         </hc:ScrollViewer>
         <TextBlock HorizontalAlignment="Left" Height="16" Margin="516,282,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="96"><Run Language="ko-kr" Text="File Size Data"/><LineBreak/></TextBlock>
-                
+
         <lvc:CartesianChart Series="{Binding SeriesCollection}" LegendLocation="Top" Margin="516,314,85,47" >
             <lvc:CartesianChart.AxisY>
                 <lvc:Axis Title="Second" LabelFormatter="{Binding YFormatter}"></lvc:Axis>
@@ -329,5 +334,7 @@
                 <lvc:Axis Title="Day" Labels="{Binding Labels}"></lvc:Axis>
             </lvc:CartesianChart.AxisX>
         </lvc:CartesianChart>
+        
+
     </Grid>
 </Window>

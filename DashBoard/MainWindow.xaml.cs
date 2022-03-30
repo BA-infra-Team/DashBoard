@@ -328,7 +328,9 @@ namespace DashBoard
 
             DataContext = this;
             ConfigHelper.Instance.SetLang("en");
-            }
+
+            //string text = ((ComboBoxItem)combobox1.SelectedItem).Content.ToString();
+        }
 
         public SeriesCollection SeriesCollection { get; set; }
         public string[] Labels { get; set; }
@@ -361,7 +363,7 @@ namespace DashBoard
             TotalFile totalfile = new TotalFile();
 
             totalfile.Show();
-        }    
+            }    
 
        
 
@@ -372,6 +374,128 @@ namespace DashBoard
             totalerror.Show();
         }
 
-  
+
+
+        
+
+        private void combobox1_Loaded(object sender, RoutedEventArgs e)
+        {
+            combobox1.Items.Add("Total Files");
+            combobox1.Items.Add("2022_02_08");
+            combobox1.Items.Add("2022_02_09");
+            combobox1.Items.Add("2022_02_10");
+            combobox1.Items.Add("2022_02_11");
+            combobox1.Items.Add("2022_02_12");
+            combobox1.Items.Add("2022_02_13");
+            combobox1.Items.Add("2022_02_14");
+            combobox1.Items.Add("2022_02_15");
+            combobox1.SelectedIndex = 0;
+
+        }
+        
+        private void combobox1_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            textbox1.Text = combobox1.SelectedItem.ToString() ;
+            //textbox1.Text = ((ComboBoxItem)combobox1.SelectedItem).Content.ToString();
+            
+            if (combobox1.SelectedIndex == 0)
+            {
+                textbox1.Text = ChartData.File_Statistics_PieChart_Total_File_Size.ToString() ;
+            }
+            else if (combobox1.SelectedIndex == 1)
+            {
+                textbox1.Text = ChartData.Total_File_Size_LineChart_2022_02_08_Count.ToString() ;
+            }
+           else if (combobox1.SelectedIndex == 2)
+            {
+                textbox1.Text = ChartData.Total_File_Size_LineChart_2022_02_09_Count.ToString();
+            }
+            else if (combobox1.SelectedIndex == 3)
+            {
+                textbox1.Text = ChartData.Total_File_Size_LineChart_2022_02_10_Count.ToString();
+            }
+            else if (combobox1.SelectedIndex == 4)
+            {
+                textbox1.Text = ChartData.Total_File_Size_LineChart_2022_02_11_Count.ToString();
+            }
+            else if (combobox1.SelectedIndex == 5)
+            {
+                textbox1.Text = ChartData.Total_File_Size_LineChart_2022_02_12_Count.ToString();
+            }
+            else if (combobox1.SelectedIndex == 6)
+            {
+                textbox1.Text = ChartData.Total_File_Size_LineChart_2022_02_13_Count.ToString();
+            }
+            else if (combobox1.SelectedIndex == 7)
+            {
+                textbox1.Text = ChartData.Total_File_Size_LineChart_2022_02_14_Count.ToString();
+            }
+            else
+            {
+                textbox1.Text = ChartData.Total_File_Size_LineChart_2022_02_15_Count.ToString();                                
+            }
+            
+            //string name = (sender as ComboBox).SelectedItem.ToString();
+            //textbox1.Text = combobox1.Text;
+            //textbox1.Text = ((ComboBoxItem)combobox1.SelectedItem).Content.ToString();
+            //string text = ((ComboBoxItem)combobox1.SelectedItem).Content.ToString();
+        }
+
+        private void combobox2_Loaded(object sender, RoutedEventArgs e)
+        {
+            combobox2.Items.Add("Total Errors");
+            combobox2.Items.Add("2022_02_08");
+            combobox2.Items.Add("2022_02_09");
+            combobox2.Items.Add("2022_02_10");
+            combobox2.Items.Add("2022_02_11");
+            combobox2.Items.Add("2022_02_12");
+            combobox2.Items.Add("2022_02_13");
+            combobox2.Items.Add("2022_02_14");
+            combobox2.Items.Add("2022_02_15");
+            combobox2.SelectedIndex = 0;
+        }
+
+        private void combobox2_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            textbox2.Text = combobox2.SelectedItem.ToString();
+            //textbox1.Text = ((ComboBoxItem)combobox1.SelectedItem).Content.ToString();
+
+            if (combobox2.SelectedIndex == 0)
+            {
+                textbox2.Text = ChartData.File_Statistics_PieChart_Total_File_Size.ToString();
+            }
+            else if (combobox2.SelectedIndex == 1)
+            {
+                textbox2.Text = ChartData.Total_File_Size_LineChart_2022_02_08_Count.ToString();
+            }
+            else if (combobox2.SelectedIndex == 2)
+            {
+                textbox2.Text = ChartData.Total_File_Size_LineChart_2022_02_09_Count.ToString();
+            }
+            else if (combobox2.SelectedIndex == 3)
+            {
+                textbox2.Text = ChartData.Total_File_Size_LineChart_2022_02_10_Count.ToString();
+            }
+            else if (combobox2.SelectedIndex == 4)
+            {
+                textbox2.Text = ChartData.Total_File_Size_LineChart_2022_02_11_Count.ToString();
+            }
+            else if (combobox2.SelectedIndex == 5)
+            {
+                textbox2.Text = ChartData.Total_File_Size_LineChart_2022_02_12_Count.ToString();
+            }
+            else if (combobox2.SelectedIndex == 6)
+            {
+                textbox2.Text = ChartData.Total_File_Size_LineChart_2022_02_13_Count.ToString();
+            }
+            else if (combobox2.SelectedIndex == 7)
+            {
+                textbox2.Text = ChartData.Total_File_Size_LineChart_2022_02_14_Count.ToString();
+            }
+            else
+            {
+                textbox2.Text = ChartData.Total_File_Size_LineChart_2022_02_15_Count.ToString();
+            }
+        }
     }
 }

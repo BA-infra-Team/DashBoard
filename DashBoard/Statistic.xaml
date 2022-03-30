@@ -11,7 +11,7 @@
         Title="Statistic" Height="500" Width="950">
     <Grid>
         <Grid >
-        <TextBlock Text="평균 전송 시간" Margin="40,30,792,434" FontWeight="Bold" Foreground="#FFD64545" FontSize="16"></TextBlock>
+        <TextBlock Text="평균 전송 시간" Margin="40,30,763,391" FontWeight="Bold" Foreground="#FFD64545" FontSize="16" Width="147" Height="63"></TextBlock>
         <lvc:CartesianChart Series="{Binding SeriesCollection}" LegendLocation="Top" Margin="10,128,492,96" >
             <lvc:CartesianChart.AxisY>
                 <lvc:Axis Title="Second" LabelFormatter="{Binding YFormatter}"></lvc:Axis>
